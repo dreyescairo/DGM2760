@@ -45,10 +45,11 @@ function getRandomNumber(_MIN_INT, _MAX_INT) {
 
 function calculateGuess(_userInput) {
 
-    var guessResult = (computerNumber < _userInput) ? 'Your guess was too high' :
+    var guessResult = (_userInput > MAX_INT || _userInput < MIN_INT) ? 'Your guess is out of range! Please enter a value between 1-15.' : 
+    (computerNumber < _userInput) ? 'Your guess was too high' :
         (computerNumber > _userInput) ? 'Your guess was too low' :
             (computerNumber == _userInput) ? 'You are correct! <br/> Enter a new guess to play again.' :
-            (!(_userInput % 1 == 0)) ? 'Please enter a whole number between 1 and 15': errorMessage;
+                (!(_userInput % 1 == 0)) ? 'Please enter a whole number between 1 and 15' : errorMessage;
 
     (computerNumber == _userInput) ?
         determineRibbon(numTries) : errorMessage;

@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+body {
+    font-family: 'Muli', sans-serif;
+}
+
+#wrapper {
+    min-width: 320px;
+    max-width: 1140px;
+    margin: auto;
+}
+
+#header {
+    min-height: 400px;
+    background-color: rgba(3, 29, 66, 0.80);
+    display: block;
+    background: url("../images/guessingGameLogo.png")no-repeat;
+}
+
+#fortuneText {
+    color: white;
+}
+
+div.transbox {
+    /* background: rgba(3, 29, 66, 0.80); */
+    padding: 1em;
+    top: 40px;
+    position: relative;
+}
+
+h1, h2 {
+    padding: 0;
+    margin: 0;
+}
+
+div.transbox h1 {
+    font-size: 4em;
+    font-weight: 700;
+    color: #fff;
+    padding-left: 1em;
+    margin: 0;
+}
+
+div.transbox h2 {
+    font-size: 2em;
+    font-weight: 600;
+    color: #fff;
+    padding-left: 2em;
+    margin: 0;
+    padding-bottom: .5em;
+}
+
+#content {
+    clear: both;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 2em;
+    color: #333333;
+}
+
+p {
+    margin: 0;
+    padding: 0
+}
+
+.gameContainer {
+    background-color: rgba(3, 29, 66, 0.5);
+    min-height: 200px;
+    padding: 2em;
+}
+
+div.hrDiv {
+    padding-top: 3em;
+    padding-bottom: 1em;
+}
+
+.col {
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+
+footer {
+    bottom: 0;
+    min-height: 2em;
+    background-color: rgba(3, 29, 66, 0.80);
+    color: white;
+    text-align: center;
+    padding-top: 1em;
+}

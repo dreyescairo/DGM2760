@@ -13,7 +13,7 @@ body {
 }
 
 #header {
-    min-height: 400px;
+    min-height: 300px;
     background-color: rgba(3, 29, 66, 0.5);
     display: block;
     /* background: url("../images/guessingGameLogo.png")no-repeat; */
@@ -80,7 +80,7 @@ div.hrDiv {
 
 .col {
     width: 25%;
-    
+    padding-bottom: 2em;
     float: left;
     /* padding-right: 2em; */
 }
@@ -88,11 +88,10 @@ div.hrDiv {
 .col-fluid {
     width: 100%;
     float: left;
-    padding-top: 2em;
     /* padding-right: 2em; */
 }
 
-.col span img{
+.col span img {
     font-weight: 700;
     font-size: 2em;
     color: white;
@@ -101,18 +100,28 @@ div.hrDiv {
     width: 50px;
 }
 
-.col button{
+.col button {
     width: 90%;
     height: 35px;
     margin-top: 2.5em;
 }
 
-.col textarea{
+.col textarea {
     min-height: 100px;
 }
 
-#arrayText span{
+#arrayText span {
     color: orange;
+}
+
+.instructions {
+    padding: 0;
+    color: orange;
+}
+
+.learnedList {
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 footer {

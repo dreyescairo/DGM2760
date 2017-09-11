@@ -34,7 +34,7 @@ function regExSplit(_textToSplit) {
         return null;
     }
 
-//split on new line or space or comma or comma space or comma newline
+    //split on new line or space or comma or comma space or comma newline
     return _textToSplit.value.toLowerCase().trim().split(/,|,\s+|,\n|\n|\s+/);
 }
 

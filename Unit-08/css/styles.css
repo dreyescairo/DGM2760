@@ -1,0 +1,184 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+body {
+    font-family: 'Muli', sans-serif;
+}
+
+#wrapper {
+    min-width: 320px;
+    max-width: 1140px;
+    margin: auto;
+}
+
+#header {
+    min-height: 300px;
+    background-color: rgba(3, 29, 66, 0.5);
+    display: block;
+    background: url("../images/tomb.jpg")no-repeat;
+    
+}
+
+#fortuneText {
+    color: green;
+}
+
+div.transbox {
+    background: rgba(3, 29, 66, 0.80);
+    padding: 1em;
+    top: 40px;
+    position: relative;
+}
+
+h1, h2 h3 {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* div.transbox img{
+    padding-left: 25%;
+    padding-bottom: 2em;
+    margin: 0;
+    width: 20%;
+} */
+
+#stem{
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+div.transbox h1 {
+    font-size: 4em;
+    font-weight: 700;
+    color: white;
+    padding-left: 1em;
+    margin: 0;
+}
+
+div.transbox h2 {
+    font-size: 2em;
+    font-weight: 600;
+    color: white;
+    padding-left: 2em;
+    margin: 0;
+    padding-bottom: .5em;
+}
+
+#content {
+    clear: both;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 2em;
+    color: #333333;
+}
+
+p {
+    margin: 0;
+    padding: 0
+}
+
+.gameContainer {
+    background-color: rgba(3, 29, 66, 0.5);
+    overflow: auto;
+    padding: 2em;
+    margin: 0;
+    min-width: 1000px;
+}
+
+div.hrDiv {
+    padding-top: 3em;
+    padding-bottom: 1em;
+}
+
+.col {
+    width: 25%;
+    padding-bottom: 2em;
+    float: left;
+    /* padding-right: 2em; */
+}
+
+.col-fluid {
+    width: 100%;
+    float: left;
+    /* padding-right: 2em; */
+}
+
+.col span img {
+    font-weight: 700;
+    font-size: 2em;
+    color: white;
+    position: absolute;
+    margin-top: 2%;
+    width: 50px;
+}
+
+.col button {
+    width: 90%;
+    height: 35px;
+    margin-top: 2.5em;
+}
+
+.col textarea {
+    min-height: 100px;
+}
+
+#arrayText span {
+    color: orange;
+}
+
+.instructions {
+    padding: 0;
+    color: orange;
+}
+
+.learnedList {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.quizButton{
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    border: .5px solid grey;
+    color: black;
+    font-weight: 400;
+    font-size: 2em;
+    border-radius: .2em;
+}
+
+.quizButton:hover{
+    background-color: rgba(3, 29, 66, 0.80);
+    color: white;
+}
+
+.quizButton:focus{
+    background-color: rgba(3, 29, 66, 0.30);
+    color: white;
+}
+
+#feedbackText{
+    background-color: #AAAAAA;
+    width: 25%;
+    text-align: center;
+    border-radius: 0 0 .2em .2em;
+}
+
+.true{
+color: green;
+}
+
+.false{
+color: red;
+}
+
+footer {
+    bottom: 0;
+    min-height: 2em;
+    background-color: rgba(3, 29, 66, 0.80);
+    color: white;
+    text-align: center;
+    padding-top: 1em;
+}

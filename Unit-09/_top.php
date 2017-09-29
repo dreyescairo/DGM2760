@@ -8,7 +8,11 @@
 </head>
 
 <body>
-<h1>Company Name</h1>
+<div class="container">
+
+<div class="header">
+<h1>DGM 2760 Unit-09</h1>
+</div>
 <nav>
 <ul id="mainmenu">
 <li class="active"><a href="index.php?name=fish">HOME</a></li>

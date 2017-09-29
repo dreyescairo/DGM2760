@@ -53,3 +53,53 @@ nav li:hover ul { /* this displays the menus as drop downs  */
 .keepOpen{
 	clear:both;
 }
+
+.container{
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+
+.header{
+	background-color: grey;
+	height: 200px;
+}
+
+.header h1{
+	color: white;
+	position: absolute;
+	top: 7%;
+	left: 25%;
+	}
+
+	main{
+		clear: both;
+		margin: 0;
+		padding: 50px;
+		background-color: lightblue;
+		min-height: 300px;
+	}
+	main h1{
+		
+		display: inline-block;
+		color: darkslategrey;
+	}
+
+	.learnedList{
+		
+	}
+
+	.learnedList h1{
+		padding: 0;
+	}
+
+	footer{
+		color: white;
+		padding: 0;
+		width: 100%;
+		text-align: center;
+		display: inline-block;
+		background-color: gray;
+		height: 100%;
+	}
+

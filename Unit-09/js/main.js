@@ -18,11 +18,13 @@ function splitLocation(_myLocation) {
 var nodeList = document.querySelectorAll("ul#mainmenu li a");
 var locationArrayOneSplitSlash = splitLocation(myLocation).slice().split('/');
 locationArrayOneSplitSlash = locationArrayOneSplitSlash[locationArrayOneSplitSlash.length - 1];
-determineNodeToStyle(locationArrayOneSplitSlash);
+
 
 function determineNodeToStyle(_myLocation) {
 
-
+    if(_myLocation === ""){
+        return;
+    }
     console.log(nodeList.length);
 
     for (var i = 0; i < nodeList.length; i++) {
@@ -52,4 +54,4 @@ function determineNodeToStyle(_myLocation) {
 
 }
 
-changeStyle();
+determineNodeToStyle(locationArrayOneSplitSlash);

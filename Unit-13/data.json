@@ -1,0 +1,22 @@
+[   {
+    "name":"Paramount Suite",
+    "description":"This elegant suite is highlighted with dramatic colors and a queen cherry rice bed. An antique couch sits in a bay window overlooking the sweeping lawn and the town of Rangford across the river. Adjoining the sitting-bedroom is the original family bathroom.",
+    "cost":{"weekend":"$160.00", "weekday":"$110.00"},
+    "details":["Pillowtop bed", "4k TV", "free Movie Rentals"],
+    "photo":"images/room1.jpg"
+    },
+    {
+    "name":"Executive Stay",
+    "description":"This large but cozy room, warmly decorated in taupe and sea green, features a king bed and a pair of wing-backed chairs for relaxing. It is named for another early developer of Rangford who also resided in the home.",
+    "cost":{"weekend":"$215.00", "weekday":"$190.00"},
+    "details":["Free Game Rentals", "On Demand TV", "In Room Dining"],
+    "photo":"images/room2.jpg"
+    },
+    {
+    "name":"Travel Nook",
+    "description":"A favorite of guests, this bright and spacious room is delightfully decorated in sand and bamboo. It has four windows, three of which form a large bay embracing the luxurious cherry queen bed. Snuggle into this elegant four-poster or curl up on the sofa to read.",
+    "cost":{"weekend":"$389.00", "weekday":"$315.00"},
+    "details":["City View", "Complimentary Champaign", "Jetted Tub"],
+    "photo":"images/room3.jpg"
+    }
+]

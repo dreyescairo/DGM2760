@@ -4,35 +4,59 @@
 
 body {
     font-family: 'Muli', sans-serif;
+    background: url("../images/bg.png") repeat;
+}
+
+.container{
+    max-width: 900px;
+}
+
+.container.header{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    margin-top: 50px; 
+    padding-top: 20px;
+    font-size: 30px;
 }
 
 .header {
-    background-color: lightblue;
+    background-color: #383838;
     min-height: 75px;
+    /* border-bottom: 1px solid white; */
+    color: white;
 }
 
 .mainContent {
-    background-color: grey;
+    background-color: #1f1f1f;
     min-height: 200px;
 }
 
 .wordArea{
-    margin-top: 110px;
+    margin-top: 10px;
 }
 
 #letterPlaceholder{
     font-size: 30px;
-    color: black;
+    color: white;
     margin-left: 0px;/*Initial value for tweening*/
 }
 
-.wordTiles {
-    background-color: bisque;
+.container.wordTiles {
+    background-color: #383838;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #health{
     font-weight: 700;
     font-size: 20px;
+    color: white;
+}
+
+#playerHealth{
+    font-weight: 700;
+    font-size: 20px;
+    color: white;  
 }
 
 .tile{
@@ -43,6 +67,7 @@ body {
     height: 40px;
     margin: 5px;
     float: left;
+    border-radius: 10px;
 }
 
 .tile.correct{
@@ -53,13 +78,18 @@ body {
     background-color: red;
 }
 
+.tilesRowOne{
+    padding-left: 40px;
+}
 
 .tilesRowTwo {
     margin-left: 50px;
+    padding-left: 40px;
 }
 
 .tilesRowThree {
     margin-left: 150px;
+    padding-left: 40px;
 }
 
 .tile p {
@@ -67,9 +97,27 @@ body {
     padding: 6px;
 }
 
+#messageContainer{
+    color: white;
+}
+
+#stageBackground{
+    border-radius: 20px;
+    max-width: 700px;
+}
+
 #enemy{
     width: 100px;
     position: absolute;
-    top: 200px;
-    left: 550px;
+    top: 175px;
+    left: 450px;
+}
+
+.container.footer{
+    color: white;
+    background-color: #383838;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 5px;
+    border-top: 1px solid white;
 }

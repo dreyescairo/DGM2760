@@ -25,7 +25,7 @@
 
     <div class="container header">
 
-        <div class="row">
+        <div class="row" align="center">
             <div class="col">
                 <p>Hangman</p>
             </div>
@@ -47,10 +47,26 @@
 
 <div class="row">
         <div class="col-12" align="center">
-            <img src="images/one.gif">
+            <img id="stageBackground" src="images/one.gif">
             <img id="enemy" src="images/slime.gif" width="50px;">
         </div>
     </div>
+
+    <div class="row">
+            <div class="col-12" align="center">
+                <p id="playerHealth">
+                    0 Health
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="col-12" align="center">
+                    <p id="messageContainer">
+                       
+                    </p>
+                </div>
+            </div>
 
         <div class="row">
             <div class="col-12">
@@ -65,7 +81,7 @@
     <div class="container wordTiles">
 
         <div class="row justify-content-md-center">
-            <div class="col-lg-6 col-sm-3" align="center">
+            <div class="col-lg-8 col-sm-3 tilesRowOne" align="center">
                 <div class="tile" id="q">
                     <p>Q</p>
                 </div>
@@ -109,7 +125,7 @@
         </div>
 
         <div class="row justify-content-md-center">
-            <div class="col-lg-6 col-sm-3 tilesRowTwo" align="center">
+            <div class="col-lg-8 col-sm-3 tilesRowTwo" align="center">
                 <div class="tile" id="a">
                     <p>A</p>
                 </div>
@@ -149,7 +165,7 @@
         </div>
 
         <div class="row justify-content-md-center">
-            <div class="col-lg-6 col-sm-3 tilesRowThree" align="center">
+            <div class="col-lg-8 col-sm-3 tilesRowThree" align="center">
                 <div class="tile" id="z">
                     <p>Z</p>
                 </div>
@@ -183,6 +199,15 @@
             </div>
         </div>
 
+    </div>
+
+    <div class="container footer">
+        <div class="row" align="center">
+            <div class="col-12">
+                    <p>&copy David Reyes-Cairo 2017</p>
+            </div>
+            
+        </div>
     </div>
 
 

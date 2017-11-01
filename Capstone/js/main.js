@@ -5,13 +5,13 @@ var words = ["david", "hat", "bat", "computer", "work", "school"];
 var chosenWord = "";
 var wordLength = 0;
 var underScoreArray = [];
-var health = 0;
+var enemyHealth = 0;
 
 function initGame() {
 
     chosenWord = getRandomWord();
     wordLength = chosenWord.length;
-    health = 6;
+    enemyHealth = 6;
 
     console.log(chosenWord);
 
@@ -19,7 +19,7 @@ function initGame() {
         underScoreArray.push("_");
     }
     document.getElementById('letterPlaceholder').innerHTML = underScoreArray.join("  ");
-    document.getElementById('health').innerHTML = health + " Health";
+    document.getElementById('health').innerHTML = 'Enemy Health: ' + enemyHealth;
 }
 
 
@@ -42,10 +42,13 @@ function checkUserInput(letter) {
     var currentTile = document.getElementById(letter);
     var placeholder = document.getElementById('letterPlaceholder');
     placeholder.style.color = "black"; //reset the color back to default at the beginning of function call.
+    resetEnemyVisualDefault();
+
 
     letter = letter.toLowerCase();
 
-    if (health > 0) {
+    if (enemyHealth > 0) {
+
         for (var i = 0; i < wordLength; i++) {
             if (letter === chosenWord.charAt(i)) {
                 //alert("true");
@@ -55,7 +58,9 @@ function checkUserInput(letter) {
         }
 
         if (!foundCharacter) {
-            health--;
+
+            
+
             TweenLite.from("#letterPlaceholder", 0.5, {
                 color: "#9f1e1e",
                 ease: Power2.easeInOut
@@ -64,9 +69,17 @@ function checkUserInput(letter) {
                 marginLeft: "20px",
                 ease: Bounce.easeOut
             });
-            
+
+
+
             currentTile.className += " incorrect";
-        } else {
+
+        } 
+        else 
+        {
+
+            enemyHealth--;
+            playHurtAnimation();
             currentTile.className += " correct";
 
             TweenLite.from("#letterPlaceholder", 0.25, {
@@ -76,10 +89,32 @@ function checkUserInput(letter) {
         }
 
     }
+
     document.getElementById('letterPlaceholder').innerHTML = underScoreArray.join("  ");
-    document.getElementById('health').innerHTML = health + " Health";
+    document.getElementById('health').innerHTML = 'Enemy Health: ' + enemyHealth;
     foundCharacter = false;
 
+}
+
+
+function playHurtAnimation() {
+
+    TweenLite.from(enemy, 0.25, {
+        rotation: -90,
+        transformOrigin: "5px, 5px"
+    });
+    TweenLite.from(enemy, 0.25, {
+        css: {
+            '-webkit-filter': 'hue-rotate(230deg)'
+        }
+    });
+}
+
+function resetEnemyVisualDefault() {
+    var enemy = document.getElementById('enemy');
+
+    enemy.style.webkitTransform = 'matrix(1, 0, 0, 1, 0, 0)';
+    enemy.style.webkitFilter = 'none';
 }
 
 initGame();

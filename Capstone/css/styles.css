@@ -8,12 +8,12 @@ body {
 
 .header {
     background-color: lightblue;
-    height: 100px;
+    min-height: 75px;
 }
 
 .mainContent {
     background-color: grey;
-    height: 200px;
+    min-height: 200px;
 }
 
 .wordArea{
@@ -30,7 +30,10 @@ body {
     background-color: bisque;
 }
 
-
+#health{
+    font-weight: 700;
+    font-size: 20px;
+}
 
 .tile{
     color: white;
@@ -62,4 +65,11 @@ body {
 .tile p {
     margin: 0 auto;
     padding: 6px;
+}
+
+#enemy{
+    width: 100px;
+    position: absolute;
+    top: 200px;
+    left: 550px;
 }

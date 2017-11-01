@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+body {
+    font-family: 'Muli', sans-serif;
+}
+
+.header {
+    background-color: lightblue;
+    height: 100px;
+}
+
+.mainContent {
+    background-color: grey;
+    height: 200px;
+}
+
+.wordArea{
+    margin-top: 110px;
+}
+
+#letterPlaceholder{
+    font-size: 30px;
+    color: black;
+    margin-left: 0px;/*Initial value for tweening*/
+}
+
+.wordTiles {
+    background-color: bisque;
+}
+
+
+
+.tile{
+    color: white;
+    background-color: darkcyan;
+    padding: 2px;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    float: left;
+}
+
+.tile.correct{
+    background-color: green;
+}
+
+.tile.incorrect{
+    background-color: red;
+}
+
+
+.tilesRowTwo {
+    margin-left: 50px;
+}
+
+.tilesRowThree {
+    margin-left: 150px;
+}
+
+.tile p {
+    margin: 0 auto;
+    padding: 6px;
+}

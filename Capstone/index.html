@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>DRC Assignment 1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,600,700" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+        
+</head>
+
+<body>
+
+
+    <div class="container header">
+
+        <div class="row">
+            <div class="col">
+                <p>Hangman</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container mainContent">
+
+<div class="row">
+    <div class="col-4">
+        <div class="healthContainer">
+            <p id="health">
+                0 Health
+            </p>
+        </div>
+    </div>
+</div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="wordArea" align="center">
+                    <p id="letterPlaceholder"></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container wordTiles">
+
+        <div class="row justify-content-md-center">
+            <div class="col-lg-6 col-sm-3" align="center">
+                <div class="tile" id="q">
+                    <p>Q</p>
+                </div>
+
+                <div class="tile" id="w">
+                    <p>W</p>
+                </div>
+
+                <div class="tile" id="e">
+                    <p>E</p>
+                </div>
+
+                <div class="tile" id="r">
+                    <p>R</p>
+                </div>
+
+                <div class="tile" id="t">
+                    <p>T</p>
+                </div>
+
+                <div class="tile" id="y">
+                    <p>Y</p>
+                </div>
+
+                <div class="tile" id="u">
+                    <p>U</p>
+                </div>
+
+                <div class="tile" id="i">
+                    <p>I</p>
+                </div>
+
+                <div class="tile" id="o">
+                    <p>O</p>
+                </div>
+
+                <div class="tile" id="p">
+                    <p>P</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-lg-6 col-sm-3 tilesRowTwo" align="center">
+                <div class="tile" id="a">
+                    <p>A</p>
+                </div>
+
+                <div class="tile" id="s">
+                    <p>S</p>
+                </div>
+
+                <div class="tile" id="d">
+                    <p>D</p>
+                </div>
+
+                <div class="tile" id="f">
+                    <p>F</p>
+                </div>
+
+                <div class="tile" id="g">
+                    <p>G</p>
+                </div>
+
+                <div class="tile" id="h">
+                    <p>H</p>
+                </div>
+
+                <div class="tile" id="j">
+                    <p>J</p>
+                </div>
+
+                <div class="tile" id="k">
+                    <p>K</p>
+                </div>
+                <div class="tile" id="l">
+                    <p>L</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-lg-6 col-sm-3 tilesRowThree" align="center">
+                <div class="tile" id="z">
+                    <p>Z</p>
+                </div>
+
+                <div class="tile" id="x">
+                    <p>X</p>
+                </div>
+
+                <div class="tile" id="c">
+                    <p>C</p>
+                </div>
+
+                <div class="tile" id="v">
+                    <p>V</p>
+                </div>
+
+                <div class="tile" id="b">
+                    <p>B</p>
+                </div>
+
+                <div class="tile" id="n">
+                    <p>N</p>
+                </div>
+
+                <div class="tile" id="m">
+                    <p>M</p>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+</body>
+<script type="text/javascript" src="js/main.js"></script>
+
+</html>

@@ -10,15 +10,33 @@ var enemyHealth = 0;
 var playerHealth = 0;
 var enemy = document.getElementById('enemy');
 
-function initGame() {
 
+
+var xhttp = new XMLHttpRequest();
+xhttp.open("GET", "http://setgetgo.com/randomword/get.php", true);
+xhttp.send();
+
+xhttp.onload = function() {
+  if (this.status == 200) {
+
+    chosenWord = this.responseText.toUpperCase();
+
+  }else{
     words = ["david", "hat", "bat", "computer", "work", "school"];
     chosenWord = getRandomWord();
+  }
+  initGame();
+};
+
+
+function initGame() {
+
+    console.log(chosenWord);
     wordLength = chosenWord.length;
     enemyHealth = wordLength;
     playerHealth = wordLength + 4;
 
-    console.log(chosenWord);
+    
 
     //add the letter placeholders when we get the random word.
     for (var i = 0; i < wordLength; i++) {
@@ -102,10 +120,20 @@ function checkUserInput(letter) {
                 });
 
 
+                TweenLite.from("#playerHealth", 0.5, {
+                    color: "#9f1e1e",
+                    ease: Power2.easeInOut
+                });
 
                 currentTile.className += " incorrect";
 
             } else {
+
+                TweenLite.from("#health", 0.5, {
+                    color: "#9f1e1e",
+                    ease: Power2.easeInOut
+                });
+
                 //if character was found, play all the animations relevant to the enemy being hurt.
                 playHurtAnimation();
                 currentTile.className += " correct";
@@ -196,4 +224,3 @@ function resetEnemyVisualDefault() {
 }
 
 
-initGame();

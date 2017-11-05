@@ -52,6 +52,7 @@ body {
     font-weight: 700;
     font-size: 20px;
     color: white;
+    padding-top: 10px;
 }
 
 #playerHealth{
@@ -126,6 +127,11 @@ body {
 
 }
 
+#nextWordBT{
+    opacity: 1;
+    font-size: 20px;
+}
+
 #stageBackground{
     border-radius: 20px;
     max-width: 700px;
@@ -147,3 +153,26 @@ body {
     padding: 5px;
     border-top: 1px solid white;
 }
+
+
+.card{
+    border: none;
+   
+}
+
+.card-header{
+    background-color: #383838;
+    color: white;
+    border: none;
+}
+
+.card-header a{
+    text-decoration: none;
+}
+
+.card-block{
+    padding: 15px;
+    background-color: lightslategray;
+    color: white;
+}
+

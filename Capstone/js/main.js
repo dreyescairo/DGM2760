@@ -9,34 +9,52 @@ var guessedLetters = [];
 var enemyHealth = 0;
 var playerHealth = 0;
 var enemy = document.getElementById('enemy');
-
+var afterFirstLoad = false;
 
 
 var xhttp = new XMLHttpRequest();
-xhttp.open("GET", "http://setgetgo.com/randomword/get.php", true);
-xhttp.send();
+// xhttp.open("GET", "http://setgetgo.com/randomword/get.php", true);
+// xhttp.send();
+generateNewWord();
 
-xhttp.onload = function() {
-  if (this.status == 200) {
+xhttp.onload = function () {
 
-    chosenWord = this.responseText.toUpperCase();
+    if (afterFirstLoad) {
+        resetGame();
+    }
 
-  }else{
-    words = ["david", "hat", "bat", "computer", "work", "school"];
-    chosenWord = getRandomWord();
-  }
-  initGame();
+    if (this.status == 200) {
+
+        chosenWord = this.responseText.toUpperCase();
+
+    } else {
+        words = ["david", "hat", "bat", "computer", "work", "school"];
+        chosenWord = getRandomWord();
+    }
+
+
+
+    initGame();
+    //xhttp.abort();
 };
 
 
-function initGame() {
+function generateNewWord() {
 
+    xhttp.open("GET", "http://setgetgo.com/randomword/get.php", true);
+    xhttp.send();
+
+}
+
+
+function initGame() {
+    afterFirstLoad = true;
     console.log(chosenWord);
     wordLength = chosenWord.length;
     enemyHealth = wordLength;
-    playerHealth = wordLength + 4;
+    playerHealth = wordLength + 2;
 
-    
+
 
     //add the letter placeholders when we get the random word.
     for (var i = 0; i < wordLength; i++) {
@@ -65,7 +83,12 @@ function getRandomWord() {
 
 document.onkeyup = function (event) {
     //alert(event.key);
-    checkUserInput(event.key);
+//use regex for determining if the key pressed was a letter. if so, call checkUserInput();
+    var charTyped = String.fromCharCode(event.which);
+    if (/[a-z\d]/i.test(charTyped)) {
+        checkUserInput(event.key);
+    }
+    
 }
 
 function determineIfLetterWasUsedBefore(_letter) {
@@ -84,7 +107,7 @@ function checkUserInput(letter) {
     var wasLetterUsed = determineIfLetterWasUsedBefore(letter);
 
 
-    if (enemyHealth > 0 && playerHealth > 0) {
+    if (enemyHealth > 0 && playerHealth > 0 && letter != null) {
 
         //check if letter was already checked before and added to the list as a correct letter. if not, go ahead and hurt the enemy.
         if (!wasLetterUsed) {
@@ -168,7 +191,7 @@ function checkUserInput(letter) {
             delay: 0.5
         });
 
-        document.getElementById('messageText').innerHTML = "You Win";
+        document.getElementById('messageText').innerHTML = "You Win" + "<p><button type='button' id='nextWordBT' class='btn btn-danger' onclick='generateNewWord();'>Click for a new word!</button></p>";
         document.getElementById('messageText').style.color = "green";
 
     } else if (enemyHealth != 0 && playerHealth === 0) {
@@ -185,7 +208,8 @@ function checkUserInput(letter) {
 
         });
 
-        document.getElementById('messageText').innerHTML = "You Died";
+        document.getElementById('messageText').innerHTML = "You Died" + "<p><button type='button' id='nextWordBT' class='btn btn-danger' onclick='generateNewWord();'>Click for a new word!</button></p>";
+
         document.getElementById('messageText').style.color = "red";
     }
 
@@ -199,12 +223,41 @@ function checkUserInput(letter) {
 }
 
 
+function resetGame() {
+
+    words = [];
+    chosenWord = "";
+    wordLength = 0;
+    underScoreArray = [];
+    guessedLetters = [];
+    enemyHealth = 0;
+    playerHealth = 0;
+
+    for (var i = 0; i < document.getElementsByClassName('tile').length; i++) {
+        document.getElementsByClassName('tile')[i].classList.remove('correct');
+        document.getElementsByClassName('tile')[i].classList.remove('incorrect');
+
+    }
+
+
+    document.getElementById('health').style.color = "white";
+    document.getElementById('playerHealth').style.color = "white";
+
+    document.getElementById('letterPlaceholder').innerHTML = "";
+    document.getElementById('messageText').style.opacity = 0;
+    document.getElementsByClassName('messageTextContainer')[0].style.opacity = 0;
+    enemy.style.opacity = "1";
+
+}
+
+
 function playHurtAnimation() {
 
     TweenLite.from(enemy, 0.25, {
         rotation: -90,
         transformOrigin: "5px, 5px"
     });
+    
     TweenLite.from(enemy, 0.25, {
         css: {
             '-webkit-filter': 'hue-rotate(230deg)'
@@ -222,5 +275,3 @@ function resetEnemyVisualDefault() {
     enemy.style.webkitTransform = 'matrix(1, 0, 0, 1, 0, 0)';
     enemy.style.webkitFilter = 'none';
 }
-
-

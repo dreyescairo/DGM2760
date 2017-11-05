@@ -35,6 +35,32 @@
 
     <div class="container mainContent">
 
+
+        <div id="accordion" role="tablist" aria-multiselectable="true" align="center">
+            <div class="card">
+                <div class="card-header" role="tab" id="headingOne">
+                    <h5 class="mb-0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Instructions
+                          </a>
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" align="left">
+                    <div class="card-block">
+                        <p>Start typing or click on a letter below.</p>
+                        <p>Keep an eye on your lives. Good luck!</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
         <div class="row">
             <div class="col-12">
                 <div class="healthContainer" align="center">
@@ -52,7 +78,9 @@
                 <div class="messageTextContainer">
 
                 </div>
-                <p id="messageText">You Died</p>
+                <p id="messageText">
+                    <!-- <button id="nextWordBT" onclick="generateNewWord();">Click for new word!</button> -->
+                </p>
 
             </div>
         </div>

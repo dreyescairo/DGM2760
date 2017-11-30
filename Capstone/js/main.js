@@ -13,19 +13,25 @@ var afterFirstLoad = false;
 
 
 var xhttp = new XMLHttpRequest();
-// xhttp.open("GET", "http://setgetgo.com/randomword/get.php", true);
-// xhttp.send();
+
 generateNewWord();
 
+
 xhttp.onload = function () {
+
 
     if (afterFirstLoad) {
         resetGame();
     }
 
     if (this.status == 200) {
-
-        chosenWord = this.responseText.toUpperCase();
+        var jsonResponse = JSON.parse(this.responseText);
+        if (jsonResponse.word.indexOf('-') > -1 || jsonResponse.word.indexOf(' ') > -1) {
+            generateNewWord();
+            return;
+        } else {
+            chosenWord = jsonResponse.word.toUpperCase();
+        }
 
     } else {
         words = ["david", "hat", "bat", "computer", "work", "school"];
@@ -40,8 +46,9 @@ xhttp.onload = function () {
 
 
 function generateNewWord() {
-
-    xhttp.open("GET", "http://setgetgo.com/randomword/get.php", true);
+    //get words from the API with no spaces TODO: Get words that have definitions so I can display it to the user
+    xhttp.open("GET", "https://wordsapiv1.p.mashape.com/words/?random=true&letterpattern=%2F%5E%5CS*%24%2F&", true);
+    xhttp.setRequestHeader("X-Mashape-Key", "OaSoKwmdFMmshGw77lyrbzD50kBAp1co3vbjsnftKgMNkt1KVy");
     xhttp.send();
 
 }
@@ -83,12 +90,12 @@ function getRandomWord() {
 
 document.onkeyup = function (event) {
     //alert(event.key);
-//use regex for determining if the key pressed was a letter. if so, call checkUserInput();
+    //use regex for determining if the key pressed was a letter. if so, call checkUserInput();
     var charTyped = String.fromCharCode(event.which);
     if (/[a-z\d]/i.test(charTyped)) {
         checkUserInput(event.key);
     }
-    
+
 }
 
 function determineIfLetterWasUsedBefore(_letter) {
@@ -257,7 +264,7 @@ function playHurtAnimation() {
         rotation: -90,
         transformOrigin: "5px, 5px"
     });
-    
+
     TweenLite.from(enemy, 0.25, {
         css: {
             '-webkit-filter': 'hue-rotate(230deg)'
